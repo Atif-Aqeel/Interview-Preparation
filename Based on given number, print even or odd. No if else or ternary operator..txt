@@ -1,0 +1,19 @@
+Based on given number, print even or odd. No if else or ternary operator.
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int no;
+
+	cout << "Enter a no: ";
+	cin >> no;
+
+	(no & 1 && cout << "odd" )|| cout << "even";
+
+	return 0;
+}
+
+// This code is contributed by sarajadhav12052009
+
