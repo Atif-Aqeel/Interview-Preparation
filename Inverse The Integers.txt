@@ -1,0 +1,45 @@
+Reverse a number using the while loop in C++
+To reverse a number in C++ programming, you have to ask the user to enter a number. Now find the reverse of that number, and then print its reverse on output as shown in the program given below:
+
+The question is: write a program in C++ to reverse a number. Here is its answer:
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int num, rem, rev=0;
+    cout<<"Enter the Number: ";
+    cin>>num;
+    while(num!=0)
+    {
+        rem = num%10;
+        rev = rem + (rev*10);
+        num = num/10;
+    }
+    cout<<"\nReverse = "<<rev;
+    cout<<endl;
+    return 0;
+}
+
+
+
+
+reverse a number c++
+The dry run of the above program with user input 123 goes like this:
+
+-Initial value, rev=0
+-When a user enters the number 123, it is saved in the variable num.
+-Now the condition num!=0 (of the while loop) or 123!=0 evaluates to be true, therefore program flow goes inside the loop, and all three statements gets executed.
+-That is, num%10 or 123%10 or 3 gets initialized to rem.
+-Then rem + (rev*10) or 3 + (0*10) or 3 gets initialized to rev. So rev=3
+-And finally, num/10 or 123/10 or 12 gets initialized to num. So num=12
+-Now, after executing all three statements of the while loop, its condition gets evaluated evaluated.
+-That is, the condition num!=0 or 12!=0 again evaluates to be true, therefore program flow again goes inside the loop.
+-Inside the loop, num%10 or 12%10 or 2 is initialized to rem once more.
+-Then rem + (rev*10) or 2 + (3*10) or 2+30 or 32 gets initialized to rev. So rev=32
+num/10 or 12/10 or 1 gets initialized to num. So num=1
+-Again, the condition of the while loop gets evaluated. That is, num!=0 or 1!=0 evaluates to be true, therefore all the three statements gets executed.
+-That is, num%10 or 1%10 or 1 gets initialized to rem. And rem + (rev*10) or 1 + (32*10) or 1+320 or 321 gets initialized to rev. Finally, num/10 or 1/10 or 0 gets initialized to num. -So after completing all three statements, we have rev = 321 and num = 0.
+-Now this time, the condition of the while loop, num!=0 or 0!=0, evaluates to false. As a result, the while loop's evaluation is completed.
+We now have a variable rev that contains the reverse (321) of the given number (123).
+-So just print the value of rev as the reverse of a number entered by the user at run-time.
