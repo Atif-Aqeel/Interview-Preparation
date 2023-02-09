@@ -1,0 +1,53 @@
+Find out the index of + or – operator in the string
+Real part will be a substring starting from index 0 to a length (index of operator – 1)
+Imaginary part will be a substring starting from index (index of operator + 1) to (length of string – index of operator – 2)
+
+
+// C++ program to find the real and
+// imaginary parts of a Complex Number
+#include <bits/stdc++.h>
+using namespace std;
+
+// Function to find real and imaginary
+// parts of a complex number
+void findRealAndImag(string s)
+{
+	// string length stored in variable l
+	int l = s.length();
+
+	// variable for the index of the separator
+	int i;
+
+	// Storing the index of '+'
+	if (s.find('+') < l) {
+		i = s.find('+');
+	}
+	// else storing the index of '-'
+	else {
+		i = s.find('-');
+	}
+
+	// Finding the real part
+	// of the complex number
+	string real = s.substr(0, i);
+
+	// Finding the imaginary part
+	// of the complex number
+	string imaginary = s.substr(i + 1, l - i - 2);
+
+	cout << "Real part: " << real << "\n";
+	cout << "Imaginary part: "
+		<< imaginary << "\n";
+}
+
+// Driver code
+int main()
+{
+	string s = "3+4i";
+
+	findRealAndImag(s);
+
+	return 0;
+}
+
+
